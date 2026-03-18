@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>业务领域 - 优美特 NEWMAT</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .business-hero { background: linear-gradient(135deg, #0066CC 0%, #004999 100%); padding: 150px 0 80px; text-align: center; color: white; }
+        .business-hero h1 { font-size: 42px; margin-bottom: 15px; }
+        .business-hero p { font-size: 18px; opacity: 0.9; }
+        .business-section { padding: 80px 0; }
+        .business-card { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-bottom: 80px; }
+        .business-card:nth-child(even) { direction: rtl; }
+        .business-card:nth-child(even) > * { direction: ltr; }
+        .business-img { height: 400px; background: linear-gradient(135deg, var(--primary-color), var(--accent-color)); border-radius: 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 80px; }
+        .business-img.pv { background: linear-gradient(135deg, #FF9500, #FF6B00); }
+        .business-img.auto { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+        .business-img.coating { background: linear-gradient(135deg, #34C759, #30B350); }
+        .business-info h3 { font-size: 32px; margin-bottom: 20px; color: var(--primary-color); }
+        .business-info .tag { display: inline-block; padding: 5px 15px; background: #e6f3ff; color: var(--primary-color); border-radius: 20px; font-size: 13px; margin-bottom: 15px; }
+        .business-info p { color: var(--text-light); line-height: 1.8; margin-bottom: 20px; }
+        .business-features { display: flex; flex-wrap: wrap; gap: 15px; }
+        .feature-item { padding: 10px 20px; background: var(--bg-light); border-radius: 25px; font-size: 14px; }
+        .feature-item i { color: var(--primary-color); margin-right: 8px; }
+        @media (max-width: 768px) { .business-card { grid-template-columns: 1fr; } .business-card:nth-child(even) { direction: ltr; } }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo"><img src="images/logo.svg" alt="NEWMAT 优美特" style="height:50px;"></a>
+            <ul class="nav-menu">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="about.html">关于我们</a></li>
+                <li><a href="business.html" class="active">业务领域</a></li>
+                <li><a href="solutions.html">解决方案</a></li>
+                <li><a href="products.html">产品中心</a></li>
+                <li><a href="videos.html">视频中心</a></li>
+                <li><a href="contact.html">联系我们</a></li>
+            </ul>
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+        </div>
+    </nav>
+
+    <div class="business-hero">
+        <div class="container">
+            <h1>业务领域</h1>
+            <p>专注于环保新材料，为全球客户提供一体化解决方案</p>
+        </div>
+    </div>
+
+    <div class="page-content">
+        <div class="container">
+            <div class="business-section">
+                <!-- 机器人耗材 -->
+                <div class="business-card">
+                    <div class="business-img"><i class="fas fa-robot"></i></div>
+                    <div class="business-info">
+                        <span class="tag">核心业务</span>
+                        <h3>机器人末端耗材</h3>
+                        <p>为具身智能机器人提供标准化指尖套、夹爪套等耗材解决方案。Hillmat产品线覆盖医疗、食品、家用、工业四大场景。</p>
+                        <p>与Hillbot联合推出，重新定义机器人末端交互，让更换机器人指尖像更换打印机墨盒一样简单。</p>
+                        <div class="business-features">
+                            <span class="feature-item"><i class="fas fa-check"></i> Hillmat-Medi 医疗级</span>
+                            <span class="feature-item"><i class="fas fa-check"></i> Hillmat-Food 食品级</span>
+                            <span class="feature-item"><i class="fas fa-check"></i> Hillmat-Lite 家用级</span>
+                            <span class="feature-item"><i class="fas fa-check"></i> Hillmat-Pro 工业级</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 光伏材料 -->
+                <div class="business-card">
+                    <div class="business-img pv"><i class="fas fa-solar-panel"></i></div>
+                    <div class="business-info">
+                        <span class="tag">核心业务</span>
+                        <h3>光伏封装材料</h3>
+                        <p>轻质光伏透明前板是一种高性能复合材料制成的透明薄膜材料，专为轻质柔性光伏组件而设计，替代传统玻璃。</p>
+                        <p>同时提供光伏专用粉末涂料，零VOC排放，优异的耐候性和附着力。</p>
+                        <div class="business-features">
+                            <span class="feature-item"><i class="fas fa-check"></i> 轻质透明前板</span>
+                            <span class="feature-item"><i class="fas fa-check"></i> 高透光率</span>
+                            <span class="feature-item"><i class="fas fa-check"></i> 光伏粉末涂料</span>
+                            <span class="feature-item"><i class="fas fa-check"></i> 封装胶膜</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 汽车涂料 -->
+                <div class="business-card">
+                    <div class="business-img auto"><i class="fas fa-car"></i></div>
+                    <div class="business-info">
+                        <span class="tag">核心业务</span>
+                        <h3>汽车涂层材料</h3>
+                        <p>为汽车零部件提供高性能环保涂层，从轮毂到整车全面覆盖。零VOC排放粉末涂料，色彩丰富耐久。</p>
+                        <p>公司是国内首家高铁涂料批量供应商，技术同源，品质保证。</p>
+                        <div class="business-features">
+                            <span class="feature-item"><i class="fas fa-check"></i> 轮毂涂料</span>
+                            <span class="feature-item"><i class="fas fa-check"></i> 保险杠涂料</span>
+                            <span class="feature-item"><i class="fas fa-check"></i> 整车粉末涂料</span>
+                            <span class="feature-item"><i class="fas fa-check"></i> 底盘护板</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 水性/粉末涂料 -->
+                <div class="business-card">
+                    <div class="business-img coating"><i class="fas fa-paint-roller"></i></div>
+                    <div class="business-info">
+                        <span class="tag">传统优势</span>
+                        <h3>水性/粉末涂料</h3>
+                        <p>20年技术积累，高性能水性涂料和零排放粉末涂料产品。广泛应用于家电、消费电子、通用工业等领域。</p>
+                        <p>产品涵盖常温自干、低温固化、中高温烘固化系列，从现场施工条件和涂层性能指标上全面满足客户需求。</p>
+                        <div class="business-features">
+                            <span class="feature-item"><i class="fas fa-check"></i> 高性能水性涂料</span>
+                            <span class="feature-item"><i class="fas fa-check"></i> 零VOC粉末涂料</span>
+                            <span class="feature-item"><i class="fas fa-check"></i> 纳米级新材料</span>
+                            <span class="feature-item"><i class="fas fa-check"></i> 特种涂料</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="about.html">公司介绍</a></li>
+                        <li><a href="about.html">发展历程</a></li>
+                        <li><a href="about.html">研发实力</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>业务领域</h4>
+                    <ul>
+                        <li><a href="solutions.html">机器人耗材</a></li>
+                        <li><a href="business.html">光伏材料</a></li>
+                        <li><a href="business.html">汽车涂料</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> 010-61457057</li>
+                        <li><i class="fas fa-envelope"></i> office@newmater.cn</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 优美特（北京）环境材料科技股份公司 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

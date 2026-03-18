@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品中心 - 优美特 NEWMAT</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .products-hero { background: linear-gradient(135deg, #0066CC 0%, #004999 100%); padding: 150px 0 80px; text-align: center; color: white; }
+        .products-hero h1 { font-size: 42px; margin-bottom: 15px; }
+        .products-hero p { font-size: 18px; opacity: 0.9; }
+        .filter-section { background: var(--bg-light); padding: 30px 0; border-bottom: 1px solid #eee; }
+        .filter-btns { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
+        .filter-btn { padding: 10px 25px; background: white; border: 1px solid #ddd; border-radius: 25px; cursor: pointer; transition: var(--transition); font-size: 14px; }
+        .filter-btn:hover, .filter-btn.active { background: var(--primary-color); color: white; border-color: var(--primary-color); }
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; padding: 60px 0; }
+        .product-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.05); transition: var(--transition); }
+        .product-card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
+        .product-img { height: 220px; background: linear-gradient(135deg, #e6f3ff, #cce5ff); display: flex; align-items: center; justify-content: center; font-size: 60px; color: var(--primary-color); }
+        .product-info { padding: 25px; }
+        .product-info h3 { font-size: 18px; margin-bottom: 10px; }
+        .product-info p { color: var(--text-light); font-size: 14px; line-height: 1.6; margin-bottom: 15px; }
+        .product-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px; }
+        .product-tag { padding: 4px 12px; background: #f0f0f0; border-radius: 15px; font-size: 12px; color: #666; }
+        .product-actions { display: flex; gap: 10px; }
+        .btn-detail { padding: 8px 20px; background: var(--primary-color); color: white; border-radius: 20px; font-size: 13px; transition: var(--transition); }
+        .btn-detail:hover { background: var(--secondary-color); }
+        .btn-tds { padding: 8px 20px; background: white; color: var(--primary-color); border: 1px solid var(--primary-color); border-radius: 20px; font-size: 13px; transition: var(--transition); display: flex; align-items: center; gap: 5px; }
+        .btn-tds:hover { background: var(--primary-color); color: white; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo"><img src="images/logo.png" alt="NEWMAT 优美特"></a>
+            <ul class="nav-menu">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="about.html">关于我们</a></li>
+                <li><a href="business.html">业务领域</a></li>
+                <li><a href="products.html" class="active">产品中心</a></li>
+                <li><a href="videos.html">视频中心</a></li>
+                <li><a href="contact.html">联系我们</a></li>
+            </ul>
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+        </div>
+    </nav>
+
+    <div class="products-hero">
+        <div class="container">
+            <h1>产品中心</h1>
+            <p>全系列环保新材料产品，满足多样化需求</p>
+        </div>
+    </div>
+
+    <div class="filter-section">
+        <div class="container">
+            <div class="filter-btns">
+                <button class="filter-btn active" data-filter="all">全部产品</button>
+                <button class="filter-btn" data-filter="water">水性涂料</button>
+                <button class="filter-btn" data-filter="powder">粉末涂料</button>
+                <button class="filter-btn" data-filter="nano">纳米材料</button>
+                <button class="filter-btn" data-filter="pv">光伏材料</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-content">
+        <div class="container">
+            <div class="products-grid">
+                <!-- 产品1 -->
+                <div class="product-card" data-category="water">
+                    <div class="product-img"><i class="fas fa-paint-roller"></i></div>
+                    <div class="product-info">
+                        <h3>常温自干水性涂料</h3>
+                        <p>适用于室内外金属表面的常温自干型水性涂料，环保无污染，施工方便。</p>
+                        <div class="product-tags">
+                            <span class="product-tag">常温自干</span>
+                            <span class="product-tag">环保</span>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-detail">详情</a>
+                            <a href="files/TDS-water-01.pdf" class="btn-tds" target="_blank"><i class="fas fa-download"></i> TDS</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 产品2 -->
+                <div class="product-card" data-category="water">
+                    <div class="product-img"><i class="fas fa-fire"></i></div>
+                    <div class="product-info">
+                        <h3>低温固化水性涂料</h3>
+                        <p>专为低温施工条件设计的固化体系，节能省电，适用于无法高温烘烤的基材。</p>
+                        <div class="product-tags">
+                            <span class="product-tag">低温固化</span>
+                            <span class="product-tag">节能</span>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-detail">详情</a>
+                            <a href="files/TDS-water-02.pdf" class="btn-tds" target="_blank"><i class="fas fa-download"></i> TDS</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 产品3 -->
+                <div class="product-card" data-category="water">
+                    <div class="product-img"><i class="fas fa-temperature-high"></i></div>
+                    <div class="product-info">
+                        <h3>中高温烘固化涂料</h3>
+                        <p>适用于汽车配件、家电等需要高温烘烤的高性能涂层，优异的耐腐蚀性和装饰性。</p>
+                        <div class="product-tags">
+                            <span class="product-tag">烘烤型</span>
+                            <span class="product-tag">高性能</span>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-detail">详情</a>
+                            <a href="files/TDS-water-03.pdf" class="btn-tds" target="_blank"><i class="fas fa-download"></i> TDS</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 产品4 -->
+                <div class="product-card" data-category="powder">
+                    <div class="product-img"><i class="fas fa-sparkles"></i></div>
+                    <div class="product-info">
+                        <h3>光伏专用粉末涂料</h3>
+                        <p>专为光伏支架、边框等设计的零排放粉末涂料，优异的耐候性和附着力。</p>
+                        <div class="product-tags">
+                            <span class="product-tag">光伏</span>
+                            <span class="product-tag">零VOC</span>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-detail">详情</a>
+                            <a href="files/TDS-powder-01.pdf" class="btn-tds" target="_blank"><i class="fas fa-download"></i> TDS</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 产品5 -->
+                <div class="product-card" data-category="powder">
+                    <div class="product-img"><i class="fas fa-layer-group"></i></div>
+                    <div class="product-info">
+                        <h3>复合材料专用粉末涂料</h3>
+                        <p>突破传统应用，为复合材料提供优异的表面保护和装饰效果。</p>
+                        <div class="product-tags">
+                            <span class="product-tag">复合材料</span>
+                            <span class="product-tag">高附着力</span>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-detail">详情</a>
+                            <a href="files/TDS-powder-02.pdf" class="btn-tds" target="_blank"><i class="fas fa-download"></i> TDS</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 产品6 -->
+                <div class="product-card" data-category="nano">
+                    <div class="product-img"><i class="fas fa-atom"></i></div>
+                    <div class="product-info">
+                        <h3>纳米硅溶胶</h3>
+                        <p>粒径小于100nm的纳米硅溶胶，用于提升涂料的硬度和耐候性能。</p>
+                        <div class="product-tags">
+                            <span class="product-tag">纳米级</span>
+                            <span class="product-tag">硬度提升</span>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-detail">详情</a>
+                            <a href="files/TDS-nano-01.pdf" class="btn-tds" target="_blank"><i class="fas fa-download"></i> TDS</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 产品7 -->
+                <div class="product-card" data-category="pv">
+                    <div class="product-img"><i class="fas fa-solar-panel"></i></div>
+                    <div class="product-info">
+                        <h3>轻质光伏透明前板</h3>
+                        <p>高性能复合材料制成的透明薄膜，专为轻质柔性光伏组件设计。</p>
+                        <div class="product-tags">
+                            <span class="product-tag">轻质</span>
+                            <span class="product-tag">高透光</span>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-detail">详情</a>
+                            <a href="files/TDS-pv-01.pdf" class="btn-tds" target="_blank"><i class="fas fa-download"></i> TDS</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 产品8 -->
+                <div class="product-card" data-category="pv">
+                    <div class="product-img"><i class="fas fa-border-all"></i></div>
+                    <div class="product-info">
+                        <h3>光伏封装胶膜</h3>
+                        <p>高效光伏组件封装胶膜，提供优异的粘接和防护性能。</p>
+                        <div class="product-tags">
+                            <span class="product-tag">封装</span>
+                            <span class="product-tag">高粘接</span>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-detail">详情</a>
+                            <a href="files/TDS-pv-02.pdf" class="btn-tds" target="_blank"><i class="fas fa-download"></i> TDS</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="about.html">公司介绍</a></li>
+                        <li><a href="about.html">发展历程</a></li>
+                        <li><a href="about.html">专利情况</a></li>
+                        <li><a href="about.html">荣誉资质</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>业务领域</h4>
+                    <ul>
+                        <li><a href="business.html">高性能水性涂料</a></li>
+                        <li><a href="business.html">粉末涂料</a></li>
+                        <li><a href="business.html">纳米新材料</a></li>
+                        <li><a href="business.html">光伏封装材料</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> 010-61457057</li>
+                        <li><i class="fas fa-envelope"></i> office@newmater.cn</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 北京市顺义区天竺空港工业区</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 优美特（北京）环境材料科技股份公司 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // 产品筛选
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const productCards = document.querySelectorAll('.product-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const filter = btn.dataset.filter;
+                productCards.forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

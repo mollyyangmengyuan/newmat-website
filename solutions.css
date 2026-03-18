@@ -1,0 +1,415 @@
+/* 解决方案页面样式 */
+
+.solutions-hero {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    padding: 180px 0 100px;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.solutions-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="30" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/></svg>') repeat;
+    background-size: 80px 80px;
+}
+
+.solutions-hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.solutions-hero .tag {
+    background: linear-gradient(135deg, #00A3E0, #0066CC);
+    margin-bottom: 25px;
+}
+
+.solutions-hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #fff, #00A3E0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.solutions-hero p {
+    font-size: 20px;
+    opacity: 0.9;
+}
+
+/* 痛点 */
+.pain-points {
+    padding: 100px 0;
+    background: var(--bg-light);
+}
+
+.pain-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.pain-card {
+    background: white;
+    padding: 50px 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    transition: var(--transition);
+}
+
+.pain-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.pain-card i {
+    font-size: 50px;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+}
+
+.pain-card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.pain-card p {
+    color: var(--text-light);
+    font-size: 15px;
+}
+
+/* 解决方案核心 */
+.solution-core {
+    padding: 80px 0;
+    background: white;
+}
+
+.solution-banner {
+    background: linear-gradient(135deg, #0066CC 0%, #004999 100%);
+    border-radius: 30px;
+    padding: 60px;
+    text-align: center;
+    color: white;
+}
+
+.solution-content h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.solution-tagline {
+    font-size: 18px;
+    opacity: 0.9;
+    margin-bottom: 40px;
+}
+
+.solution-model {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.model-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 30px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 15px;
+}
+
+.model-item i {
+    font-size: 32px;
+}
+
+.model-item.highlight {
+    background: rgba(255,255,255,0.3);
+}
+
+.solution-model i.fa-plus,
+.solution-model i.fa-arrow-right {
+    font-size: 24px;
+    opacity: 0.7;
+}
+
+/* 产品矩阵 */
+.products-section {
+    padding: 100px 0;
+    background: var(--bg-light);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background: white;
+    border-radius: 25px;
+    padding: 40px 30px;
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+}
+
+.product-card.medi { border-top: 4px solid #00A3E0; }
+.product-card.food { border-top: 4px solid #FF9500; }
+.product-card.lite { border-top: 4px solid #34C759; }
+.product-card.pro { border-top: 4px solid #FF3B30; }
+
+.product-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.medi .product-badge { background: #e6f3ff; color: #00A3E0; }
+.food .product-badge { background: #fff4e6; color: #FF9500; }
+.lite .product-badge { background: #e6ffea; color: #34C759; }
+.pro .product-badge { background: #ffe6e6; color: #FF3B30; }
+
+.product-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.medi .product-icon { background: linear-gradient(135deg, #00A3E0, #0088CC); }
+.food .product-icon { background: linear-gradient(135deg, #FF9500, #FF6B00); }
+.lite .product-icon { background: linear-gradient(135deg, #34C759, #30B350); }
+.pro .product-icon { background: linear-gradient(135deg, #FF3B30, #FF2D20); }
+
+.product-icon i {
+    font-size: 35px;
+    color: white;
+}
+
+.product-card h3 {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.product场景 {
+    color: var(--text-light);
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.product-features {
+    margin-bottom: 20px;
+}
+
+.product-features h4 {
+    font-size: 14px;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+}
+
+.product-features ul {
+    list-style: none;
+}
+
+.product-features ul li {
+    font-size: 14px;
+    color: var(--text-light);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.product-features ul li i {
+    color: #34C759;
+    font-size: 12px;
+}
+
+.product-patent {
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.product-patent span {
+    font-size: 12px;
+    color: var(--text-light);
+}
+
+/* 优势 */
+.advantages-section {
+    padding: 100px 0;
+    background: white;
+}
+
+.advantage-icons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.advantage-item {
+    text-align: center;
+    padding: 40px 30px;
+}
+
+.adv-icon {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #e6f3ff, #cce5ff);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+}
+
+.adv-icon i {
+    font-size: 40px;
+    color: var(--primary-color);
+}
+
+.advantage-item h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.advantage-item p {
+    color: var(--text-light);
+}
+
+/* 技术 */
+.tech-section {
+    padding: 100px 0;
+    background: linear-gradient(180deg, #f5f7fa 0%, #e6f0ff 100%);
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.tech-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 20px;
+    position: relative;
+    transition: var(--transition);
+}
+
+.tech-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.tech-number {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 48px;
+    font-weight: 700;
+    color: #f0f0f0;
+}
+
+.tech-card h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.tech-card p {
+    color: var(--text-light);
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.patent {
+    font-size: 12px;
+    color: var(--text-light);
+    background: #f5f7fa;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* 愿景 */
+.vision-section {
+    padding: 100px 0;
+    background: #1a1a2e;
+    text-align: center;
+    color: white;
+}
+
+.vision-content h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.vision-content > p {
+    font-size: 18px;
+    opacity: 0.8;
+    margin-bottom: 40px;
+}
+
+.vision-goal {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(255,255,255,0.1);
+    padding: 20px 40px;
+    border-radius: 50px;
+}
+
+.vision-goal i {
+    font-size: 28px;
+    color: var(--accent-color);
+}
+
+.vision-goal span {
+    font-size: 16px;
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+    .solutions-hero h1 {
+        font-size: 32px;
+    }
+
+    .solution-banner {
+        padding: 40px 20px;
+    }
+
+    .solution-model {
+        gap: 15px;
+    }
+
+    .model-item {
+        padding: 15px 20px;
+    }
+
+    .model-item i {
+        font-size: 24px;
+    }
+}

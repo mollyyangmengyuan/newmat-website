@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>视频中心 - 优美特 NEWMAT</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .videos-hero { background: linear-gradient(135deg, #0066CC 0%, #004999 100%); padding: 150px 0 80px; text-align: center; color: white; }
+        .videos-hero h1 { font-size: 42px; margin-bottom: 15px; }
+        .videos-hero p { font-size: 18px; opacity: 0.9; }
+        .videos-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px; padding: 60px 0; }
+        .video-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.05); transition: var(--transition); }
+        .video-card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
+        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; background: #000; }
+        .video-wrapper iframe, .video-wrapper video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        .video-info { padding: 20px; }
+        .video-info h3 { font-size: 16px; margin-bottom: 10px; }
+        .video-info p { color: var(--text-light); font-size: 13px; }
+        .video-category { display: inline-block; padding: 4px 12px; background: #e6f3ff; color: var(--primary-color); border-radius: 15px; font-size: 12px; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo"><img src="images/logo.png" alt="NEWMAT 优美特"></a>
+            <ul class="nav-menu">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="about.html">关于我们</a></li>
+                <li><a href="business.html">业务领域</a></li>
+                <li><a href="solutions.html">解决方案</a></li>
+                <li><a href="products.html">产品中心</a></li>
+                <li><a href="videos.html" class="active">视频中心</a></li>
+                <li><a href="contact.html">联系我们</a></li>
+            </ul>
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+        </div>
+    </nav>
+
+    <div class="videos-hero">
+        <div class="container">
+            <h1>视频中心</h1>
+            <p>了解优美特最新动态与产品展示</p>
+        </div>
+    </div>
+
+    <div class="page-content">
+        <div class="container">
+            <div class="videos-grid">
+                <!-- 视频1 -->
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <span class="video-category">展会回顾</span>
+                        <h3>2025 SNEC光伏展-优美特精彩回顾</h3>
+                        <p>聚焦SNEC展会现场，展示优美特轻质光伏封装材料解决方案</p>
+                    </div>
+                </div>
+
+                <!-- 视频2 -->
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <span class="video-category">产品介绍</span>
+                        <h3>高性能水性涂料产品介绍</h3>
+                        <p>详细讲解优美特水性涂料的产品特点和应用领域</p>
+                    </div>
+                </div>
+
+                <!-- 视频3 -->
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <span class="video-category">技术分享</span>
+                        <h3>粉末涂料在光伏行业的应用</h3>
+                        <p>探索零排放粉末涂料在新兴领域的创新应用</p>
+                    </div>
+                </div>
+
+                <!-- 视频4 -->
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <span class="video-category">企业宣传</span>
+                        <h3>优美特企业宣传片</h3>
+                        <p>了解优美特的发展历程、企业文化和未来愿景</p>
+                    </div>
+                </div>
+
+                <!-- 视频5 -->
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <span class="video-category">研发创新</span>
+                        <h3>ACGST研究院介绍</h3>
+                        <p>探索优美特先进的研发设施和创新成果</p>
+                    </div>
+                </div>
+
+                <!-- 视频6 -->
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <span class="video-category">案例展示</span>
+                        <h3>轻质光伏组件应用案例</h3>
+                        <p>展示优美特光伏材料在实际项目中的应用效果</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; padding: 40px 0; color: #666;">
+                <p><i class="fas fa-info-circle"></i> 更多精彩视频陆续更新中，如需定制视频请联系我们的市场团队</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="about.html">公司介绍</a></li>
+                        <li><a href="about.html">发展历程</a></li>
+                        <li><a href="about.html">专利情况</a></li>
+                        <li><a href="about.html">荣誉资质</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>业务领域</h4>
+                    <ul>
+                        <li><a href="business.html">高性能水性涂料</a></li>
+                        <li><a href="business.html">粉末涂料</a></li>
+                        <li><a href="business.html">纳米新材料</a></li>
+                        <li><a href="business.html">光伏封装材料</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> 010-61457057</li>
+                        <li><i class="fas fa-envelope"></i> office@newmater.cn</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 北京市顺义区天竺空港工业区</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 优美特（北京）环境材料科技股份公司 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
