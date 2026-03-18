@@ -1,12 +1,14 @@
-/* 全局样式 */
+/* 全局样式 - 浅色高级灰 + 企业蓝 */
 :root {
     --primary-color: #0066CC;
     --secondary-color: #004999;
     --accent-color: #00A3E0;
-    --text-dark: #333333;
+    --text-dark: #1a1a2e;
     --text-light: #666666;
     --white: #ffffff;
-    --bg-light: #f5f7fa;
+    --bg-light: #f8f9fa;
+    --bg-gray: #f0f2f5;
+    --border-color: #e5e8eb;
     --transition: all 0.3s ease;
 }
 
@@ -17,7 +19,7 @@
 }
 
 body {
-    font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+    font-family: 'Microsoft YaHei', 'PingFang SC', -apple-system, sans-serif;
     line-height: 1.6;
     color: var(--text-dark);
     background-color: var(--white);
@@ -44,8 +46,8 @@ ul {
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
     z-index: 1000;
     transition: var(--transition);
 }
@@ -60,17 +62,17 @@ ul {
 }
 
 .logo img {
-    height: 50px;
+    height: 45px;
     width: auto;
 }
 
 .nav-menu {
     display: flex;
-    gap: 25px;
+    gap: 28px;
 }
 
 .nav-menu a {
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 500;
     color: var(--text-dark);
     transition: var(--transition);
@@ -80,7 +82,7 @@ ul {
 .nav-menu a::after {
     content: '';
     position: absolute;
-    bottom: -5px;
+    bottom: -4px;
     left: 0;
     width: 0;
     height: 2px;
@@ -108,7 +110,7 @@ ul {
     position: relative;
     height: 100vh;
     min-height: 600px;
-    background: linear-gradient(135deg, #0066CC 0%, #004999 100%);
+    background: linear-gradient(135deg, #f8f9fa 0%, #e8ecf1 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -122,33 +124,37 @@ ul {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></svg>') repeat;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(0, 102, 204, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(0, 163, 224, 0.08) 0%, transparent 50%),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(0,102,204,0.03)" stroke-width="0.5"/></svg>') repeat;
     background-size: 100px 100px;
-    animation: float 20s linear infinite;
-}
-
-@keyframes float {
-    from { transform: translateY(0); }
-    to { transform: translateY(-100px); }
 }
 
 .hero-content {
     position: relative;
     z-index: 1;
-    color: var(--white);
+    color: var(--text-dark);
     padding: 20px;
+    max-width: 800px;
 }
 
 .hero-content h1 {
-    font-size: 48px;
+    font-size: 52px;
     font-weight: 700;
     margin-bottom: 20px;
+    color: var(--text-dark);
     animation: fadeInUp 1s ease;
+    line-height: 1.2;
+}
+
+.hero-content h1 span {
+    color: var(--primary-color);
 }
 
 .hero-content p {
-    font-size: 24px;
-    opacity: 0.9;
+    font-size: 20px;
+    color: var(--text-light);
     margin-bottom: 40px;
     animation: fadeInUp 1s ease 0.2s both;
 }
@@ -166,32 +172,35 @@ ul {
 
 .btn-primary {
     display: inline-block;
-    padding: 15px 40px;
-    background: var(--white);
-    color: var(--primary-color);
+    padding: 14px 36px;
+    background: var(--primary-color);
+    color: var(--white);
     font-weight: 600;
-    border-radius: 30px;
+    border-radius: 8px;
     transition: var(--transition);
     animation: fadeInUp 1s ease 0.4s both;
 }
 
 .btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 102, 204, 0.25);
 }
 
 .btn-secondary {
     display: inline-block;
-    padding: 12px 30px;
-    background: var(--primary-color);
-    color: var(--white);
+    padding: 12px 28px;
+    background: var(--white);
+    color: var(--primary-color);
     font-weight: 500;
-    border-radius: 25px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
     transition: var(--transition);
 }
 
 .btn-secondary:hover {
-    background: var(--secondary-color);
+    border-color: var(--primary-color);
+    background: var(--bg-light);
 }
 
 /* 通用区块 */
@@ -206,6 +215,7 @@ ul {
     margin-bottom: 15px;
     position: relative;
     display: inline-block;
+    font-weight: 600;
 }
 
 .section-header h2::after {
@@ -214,62 +224,64 @@ ul {
     bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
-    width: 60px;
+    width: 50px;
     height: 3px;
     background: var(--primary-color);
 }
 
 .section-header p {
-    font-size: 18px;
+    font-size: 16px;
     color: var(--text-light);
 }
 
 /* 核心业务 */
 .services {
     padding: 100px 0;
-    background: var(--bg-light);
+    background: var(--bg-gray);
 }
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
     gap: 30px;
 }
 
 .service-card {
     background: var(--white);
-    padding: 40px 30px;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    padding: 45px 35px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
     transition: var(--transition);
-    text-align: center;
+    border: 1px solid var(--border-color);
 }
 
 .service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 102, 204, 0.12);
+    border-color: rgba(0, 102, 204, 0.2);
 }
 
 .service-icon {
-    width: 80px;
-    height: 80px;
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-    border-radius: 20px;
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #f0f7ff, #e6f3ff);
+    border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 25px;
+    margin-bottom: 25px;
 }
 
 .service-icon i {
-    font-size: 35px;
-    color: var(--white);
+    font-size: 30px;
+    color: var(--primary-color);
 }
 
 .service-card h3 {
     font-size: 20px;
     margin-bottom: 15px;
     color: var(--text-dark);
+    font-weight: 600;
 }
 
 .service-card p {
@@ -283,6 +295,9 @@ ul {
     color: var(--primary-color);
     font-weight: 500;
     font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
 }
 
 .service-link:hover {
@@ -292,13 +307,14 @@ ul {
 /* 标签 */
 .tag {
     display: inline-block;
-    padding: 6px 16px;
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-    color: var(--white);
-    font-size: 13px;
-    font-weight: 500;
+    padding: 6px 14px;
+    background: linear-gradient(135deg, #f0f7ff, #e6f3ff);
+    color: var(--primary-color);
+    font-size: 12px;
+    font-weight: 600;
     border-radius: 20px;
     margin-bottom: 15px;
+    letter-spacing: 0.5px;
 }
 
 /* 亮点专区 */
@@ -310,14 +326,15 @@ ul {
 .highlight-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    gap: 80px;
     align-items: center;
 }
 
 .highlight-content h2 {
-    font-size: 36px;
+    font-size: 34px;
     margin-bottom: 20px;
     color: var(--text-dark);
+    font-weight: 600;
 }
 
 .highlight-content > p {
@@ -341,14 +358,15 @@ ul {
 }
 
 .hf-item i {
-    font-size: 24px;
+    font-size: 20px;
     color: var(--primary-color);
-    margin-top: 3px;
+    margin-top: 2px;
 }
 
 .hf-item h4 {
     font-size: 15px;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
+    font-weight: 600;
 }
 
 .hf-item p {
@@ -363,31 +381,33 @@ ul {
 }
 
 .mockup-robot {
-    width: 300px;
-    height: 300px;
-    background: linear-gradient(135deg, #e6f3ff, #cce5ff);
-    border-radius: 30px;
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 4/3;
+    background: linear-gradient(135deg, #f0f7ff, #e6f3ff);
+    border-radius: 24px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     color: var(--primary-color);
+    border: 1px solid var(--border-color);
 }
 
 .mockup-robot i {
-    font-size: 100px;
+    font-size: 80px;
     margin-bottom: 20px;
 }
 
 .mockup-robot span {
-    font-size: 24px;
-    font-weight: 700;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 /* 光伏专区 */
 .pv-section {
     padding: 100px 0;
-    background: linear-gradient(180deg, #f5f7fa 0%, #e6f0ff 100%);
+    background: var(--bg-gray);
 }
 
 .pv-grid {
@@ -399,53 +419,58 @@ ul {
 .pv-card {
     background: var(--white);
     padding: 40px 30px;
-    border-radius: 20px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
     transition: var(--transition);
-    text-align: center;
+    border: 1px solid var(--border-color);
 }
 
 .pv-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 102, 204, 0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 102, 204, 0.12);
 }
 
 .pv-icon {
-    width: 70px;
-    height: 70px;
-    background: linear-gradient(135deg, #FF9500, #FF6B00);
-    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #fff5e6, #ffe6cc);
+    border-radius: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 25px;
+    margin-bottom: 25px;
 }
 
 .pv-icon i {
-    font-size: 30px;
-    color: var(--white);
+    font-size: 26px;
+    color: #FF9500;
 }
 
 .pv-card h3 {
-    font-size: 20px;
-    margin-bottom: 15px;
+    font-size: 18px;
+    margin-bottom: 12px;
+    font-weight: 600;
 }
 
 .pv-card p {
     color: var(--text-light);
     font-size: 14px;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
     line-height: 1.6;
-}
-
-.pv-card ul {
-    text-align: left;
 }
 
 .pv-card ul li {
     color: var(--text-dark);
-    font-size: 14px;
+    font-size: 13px;
     margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pv-card ul li i {
+    color: var(--primary-color);
+    font-size: 12px;
 }
 
 /* 汽车专区 */
@@ -457,22 +482,23 @@ ul {
 .auto-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    gap: 80px;
     align-items: center;
 }
 
 .auto-image {
-    height: 400px;
-    background: linear-gradient(135deg, #1a1a2e, #16213e);
-    border-radius: 30px;
+    height: 450px;
+    background: linear-gradient(135deg, #f0f7ff, #e6f3ff);
+    border-radius: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 1px solid var(--border-color);
 }
 
 .auto-image i {
-    font-size: 150px;
-    color: var(--white);
+    font-size: 120px;
+    color: var(--primary-color);
 }
 
 .auto-content .tag {
@@ -480,8 +506,9 @@ ul {
 }
 
 .auto-content h2 {
-    font-size: 36px;
+    font-size: 34px;
     margin-bottom: 20px;
+    font-weight: 600;
 }
 
 .auto-content > p {
@@ -493,7 +520,7 @@ ul {
 
 .auto-features {
     display: grid;
-    gap: 15px;
+    gap: 14px;
 }
 
 .af-item {
@@ -511,20 +538,19 @@ ul {
 /* 优势专区 */
 .advantage-section {
     padding: 100px 0;
-    background: linear-gradient(135deg, #0066CC 0%, #004999 100%);
-    color: var(--white);
+    background: linear-gradient(135deg, #f8f9fa 0%, #e8ecf1 100%);
 }
 
 .advantage-section .section-header h2 {
-    color: var(--white);
+    color: var(--text-dark);
 }
 
 .advantage-section .section-header h2::after {
-    background: var(--white);
+    background: var(--primary-color);
 }
 
 .advantage-section .section-header p {
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--text-light);
 }
 
 .advantage-grid {
@@ -534,32 +560,35 @@ ul {
 }
 
 .advantage-card {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 40px 30px;
-    border-radius: 20px;
+    background: var(--white);
+    padding: 45px 30px;
+    border-radius: 16px;
     text-align: center;
     transition: var(--transition);
+    border: 1px solid var(--border-color);
 }
 
 .advantage-card:hover {
-    background: rgba(255, 255, 255, 0.2);
     transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 102, 204, 0.1);
 }
 
 .advantage-number {
-    font-size: 48px;
+    font-size: 42px;
     font-weight: 700;
-    margin-bottom: 10px;
+    color: var(--primary-color);
+    margin-bottom: 8px;
 }
 
 .advantage-card h4 {
-    font-size: 18px;
-    margin-bottom: 10px;
+    font-size: 16px;
+    margin-bottom: 8px;
+    font-weight: 600;
 }
 
 .advantage-card p {
-    font-size: 14px;
-    opacity: 0.8;
+    font-size: 13px;
+    color: var(--text-light);
 }
 
 /* 页脚 */
@@ -572,15 +601,16 @@ ul {
 .footer-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 40px;
+    gap: 50px;
     margin-bottom: 40px;
 }
 
 .footer-col h4 {
-    font-size: 18px;
-    margin-bottom: 20px;
+    font-size: 16px;
+    margin-bottom: 22px;
     position: relative;
-    padding-bottom: 10px;
+    padding-bottom: 12px;
+    font-weight: 600;
 }
 
 .footer-col h4::after {
@@ -588,17 +618,17 @@ ul {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 40px;
+    width: 30px;
     height: 2px;
     background: var(--primary-color);
 }
 
 .footer-col ul li {
-    margin-bottom: 12px;
+    margin-bottom: 14px;
 }
 
 .footer-col ul li a {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.65);
     font-size: 14px;
     transition: var(--transition);
 }
@@ -608,19 +638,20 @@ ul {
 }
 
 .footer-col ul li i {
-    margin-right: 8px;
+    margin-right: 10px;
     color: var(--primary-color);
 }
 
 .footer-bottom {
     text-align: center;
-    padding-top: 20px;
+    padding-top: 25px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-bottom p {
     font-size: 13px;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.45);
+    margin-bottom: 5px;
 }
 
 /* 响应式 */
@@ -640,7 +671,7 @@ ul {
         gap: 0;
         transform: translateY(-150%);
         transition: var(--transition);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
 
     .nav-menu.active {
@@ -648,8 +679,8 @@ ul {
     }
 
     .nav-menu li {
-        padding: 15px 0;
-        border-bottom: 1px solid #eee;
+        padding: 14px 0;
+        border-bottom: 1px solid var(--border-color);
     }
 
     .hero-content h1 {
@@ -657,7 +688,7 @@ ul {
     }
 
     .hero-content p {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .highlight-grid,
@@ -672,28 +703,25 @@ ul {
     .highlight-features {
         grid-template-columns: 1fr;
     }
-
-    .advantage-number {
-        font-size: 36px;
-    }
 }
 
 /* 页面通用样式 */
 .page-header {
-    background: linear-gradient(135deg, #0066CC 0%, #004999 100%);
-    padding: 150px 0 80px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e8ecf1 100%);
+    padding: 150px 0 70px;
     text-align: center;
-    color: var(--white);
+    color: var(--text-dark);
 }
 
 .page-header h1 {
-    font-size: 42px;
-    margin-bottom: 15px;
+    font-size: 40px;
+    margin-bottom: 12px;
+    font-weight: 600;
 }
 
 .page-header p {
-    font-size: 18px;
-    opacity: 0.9;
+    font-size: 16px;
+    color: var(--text-light);
 }
 
 .page-content {
@@ -702,19 +730,19 @@ ul {
 
 /* 子页面通用 */
 .sub-nav {
-    background: var(--bg-light);
-    padding: 20px 0;
-    border-bottom: 1px solid #eee;
+    background: var(--bg-gray);
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .sub-nav ul {
     display: flex;
-    gap: 30px;
+    gap: 28px;
     flex-wrap: wrap;
 }
 
 .sub-nav a {
-    font-size: 15px;
+    font-size: 14px;
     color: var(--text-light);
     transition: var(--transition);
 }
