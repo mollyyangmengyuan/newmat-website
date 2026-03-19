@@ -1,17 +1,17 @@
-/* 全局样式 - 精致深蓝科技风 */
+/* 全局样式 - 白色浅灰科技风 */
 :root {
-    --primary: #0C3184;
-    --primary-light: #1a50cc;
-    --primary-dark: #082060;
-    --accent: #00d4ff;
+    --primary: #0066cc;
+    --primary-light: #3388dd;
+    --primary-dark: #004499;
+    --accent: #0066cc;
     --accent2: #0088cc;
-    --bg-dark: #050a14;
-    --bg-card: #0d1f35;
-    --bg-light: #132845;
-    --text: #e8f0fe;
-    --text-muted: #7a9bbf;
-    --border: rgba(0,212,255,0.15);
-    --gradient: linear-gradient(135deg, #0C3184, #1a50cc);
+    --bg-dark: #ffffff;
+    --bg-card: #ffffff;
+    --bg-light: #f5f7fa;
+    --text: #1a1a2e;
+    --text-muted: #888899;
+    --border: rgba(0,102,204,0.1);
+    --gradient: linear-gradient(135deg, #ffffff, #f5f7fa);
 }
 
 * {
@@ -55,9 +55,10 @@ img {
     left: 0;
     right: 0;
     z-index: 1000;
-    background: rgba(12,49,132,0.95);
+    background: rgba(255,255,255,0.95);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.06);
 }
 
 .nav-container {
@@ -75,7 +76,7 @@ img {
     gap: 10px;
     font-size: 20px;
     font-weight: 700;
-    color: white;
+    color: var(--primary);
 }
 
 .logo img {
@@ -99,7 +100,7 @@ img {
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: var(--accent);
+    color: var(--primary);
 }
 
 .menu-toggle {
@@ -116,9 +117,18 @@ img {
     padding: 120px 24px 80px;
     position: relative;
     overflow: hidden;
-    background: 
-        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0,102,204,0.15) 0%, transparent 60%),
-        var(--bg-dark);
+    background: #ffffff;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('images/robot-tech.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+    mask-image: linear-gradient(180deg, black 20%, transparent 85%);
+    -webkit-mask-image: linear-gradient(180deg, black 20%, transparent 85%);
 }
 
 .hero::before {
@@ -145,12 +155,12 @@ img {
 .hero-badge {
     display: inline-block;
     padding: 8px 18px;
-    background: rgba(0,212,255,0.1);
-    border: 1px solid rgba(0,212,255,0.2);
+    background: rgba(0,102,204,0.08);
+    border: 1px solid rgba(0,102,204,0.15);
     border-radius: 50px;
     font-size: 13px;
     font-weight: 500;
-    color: var(--accent);
+    color: var(--primary);
     margin-bottom: 24px;
 }
 
@@ -160,10 +170,14 @@ img {
     line-height: 1.15;
     margin-bottom: 20px;
     letter-spacing: -0.02em;
+    color: var(--primary);
 }
 
 .hero h1 span {
-    color: var(--accent);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .hero p {
@@ -190,25 +204,25 @@ img {
 }
 
 .btn-primary {
-    background: var(--gradient);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
     color: white;
-    box-shadow: 0 4px 20px rgba(12,49,132,0.4);
+    box-shadow: 0 4px 20px rgba(0,102,204,0.3);
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(12,49,132,0.5);
+    box-shadow: 0 8px 30px rgba(0,102,204,0.4);
 }
 
 .btn-secondary {
     background: transparent;
-    color: white;
-    border: 1px solid rgba(255,255,255,0.3);
+    color: var(--primary);
+    border: 1px solid rgba(0,102,204,0.3);
 }
 
 .btn-secondary:hover {
-    border-color: var(--accent);
-    background: rgba(0,212,255,0.05);
+    border-color: var(--primary);
+    background: rgba(0,102,204,0.05);
 }
 
 /* 通用区块 */
@@ -228,7 +242,7 @@ section {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: var(--accent);
+    color: var(--primary);
     margin-bottom: 12px;
 }
 
@@ -236,6 +250,7 @@ section {
     font-size: clamp(1.8rem, 3vw, 2.4rem);
     font-weight: 700;
     margin-bottom: 12px;
+    color: var(--primary);
 }
 
 .section-header p {
@@ -244,7 +259,7 @@ section {
 
 /* 核心业务 */
 .services {
-    background: rgba(0,0,0,0.2);
+    background: var(--bg-light);
 }
 
 .services-grid {
@@ -263,8 +278,8 @@ section {
 
 .service-card:hover {
     transform: translateY(-6px);
-    border-color: rgba(0,212,255,0.4);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    border-color: rgba(0,102,204,0.3);
+    box-shadow: 0 20px 50px rgba(0,102,204,0.15);
 }
 
 .service-img {
@@ -301,6 +316,7 @@ section {
     font-size: 1.15rem;
     font-weight: 600;
     margin-bottom: 10px;
+    color: var(--primary);
 }
 
 .service-card p {
@@ -313,7 +329,7 @@ section {
 .service-link {
     font-size: 14px;
     font-weight: 600;
-    color: var(--accent);
+    color: var(--primary);
     display: inline-flex;
     align-items: center;
     gap: 6px;
@@ -344,6 +360,7 @@ section {
     text-align: left;
     font-size: 2rem;
     margin-bottom: 16px;
+    color: var(--primary);
 }
 
 .highlight-content > p {
@@ -392,7 +409,7 @@ section {
 
 /* 光伏 */
 .pv-section {
-    background: rgba(0,0,0,0.2);
+    background: var(--bg-light);
 }
 
 .pv-grid {
@@ -411,7 +428,7 @@ section {
 
 .pv-card:hover {
     transform: translateY(-6px);
-    border-color: rgba(255,150,0,0.4);
+    border-color: rgba(0,102,204,0.4);
 }
 
 .pv-icon {
@@ -490,6 +507,7 @@ section {
     text-align: left;
     font-size: 2rem;
     margin-bottom: 16px;
+    color: var(--primary);
 }
 
 .auto-content > p {
@@ -519,7 +537,7 @@ section {
 
 /* 优势 */
 .advantage-section {
-    background: rgba(0,0,0,0.2);
+    background: var(--bg-light);
 }
 
 .advantage-grid {
@@ -539,7 +557,7 @@ section {
 
 .advantage-card:hover {
     transform: translateY(-4px);
-    border-color: rgba(0,212,255,0.3);
+    border-color: rgba(0,102,204,0.3);
 }
 
 .advantage-number {
@@ -562,7 +580,7 @@ section {
 
 /* 页脚 */
 .footer {
-    background: #080d1a;
+    background: #1a1a2e;
     padding: 60px 0 25px;
     border-top: 1px solid var(--border);
 }
@@ -592,7 +610,7 @@ section {
 }
 
 .footer-col ul li a:hover {
-    color: var(--accent);
+    color: var(--primary);
 }
 
 .footer-col ul li i {
